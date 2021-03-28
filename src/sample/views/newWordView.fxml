@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="328.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.NewWordController">
+   <children>
+      <Button layoutX="29.0" layoutY="369.0" mnemonicParsing="false" onAction="#addWordFunction" prefHeight="17.0" prefWidth="118.0" text="Add word" textAlignment="CENTER" textOverrun="CLIP" />
+      <TextField fx:id="mainLanguageTF" layoutX="14.0" layoutY="73.0" promptText="Swedish" />
+      <TextField fx:id="secondLanguageTF" layoutX="14.0" layoutY="112.0" promptText="English" />
+      <TextField fx:id="example1TF" layoutX="13.0" layoutY="154.0" prefHeight="17.0" prefWidth="299.0" promptText="Example 1" />
+      <TextField fx:id="example2TF" layoutX="14.0" layoutY="192.0" prefHeight="17.0" prefWidth="299.0" promptText="Example 2" />
+      <TextField fx:id="example3TF" layoutX="14.0" layoutY="219.0" prefHeight="17.0" prefWidth="299.0" promptText="Example 3" />
+      <TextField fx:id="pronounciationTF" layoutX="14.0" layoutY="248.0" prefHeight="17.0" prefWidth="179.0" promptText="pronounciation" />
+      <TextArea fx:id="moreInfoTA" layoutX="14.0" layoutY="271.0" prefHeight="87.0" prefWidth="200.0" promptText="More info:" wrapText="true" />
+   </children>
+</AnchorPane>
