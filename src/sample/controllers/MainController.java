@@ -59,6 +59,10 @@ public class MainController {
     }
     public void newWordClicked(){
         int index = wordsListView.getSelectionModel().getSelectedIndex();
+        if(index<0){
+            System.out.println(index);
+            index=0;
+        }
         Word selectedWord = wordList.get(index);
         selectedWordTF.setText(selectedWord.getMainLanguage());
         examplesTA.clear();
