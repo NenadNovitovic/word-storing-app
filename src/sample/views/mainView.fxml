@@ -10,24 +10,26 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.MainController">
    <children>
-      <Button layoutX="16.0" layoutY="489.0" mnemonicParsing="false" onAction="#goToAddNewWordView" prefHeight="51.0" prefWidth="135.0" style="-fx-background-color: #006800;" text="New word" />
-      <Button layoutX="186.0" layoutY="489.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="135.0" style="-fx-background-color: #006800;" text="Test yourself" />
-      <ListView fx:id="wordsListView" layoutX="16.0" layoutY="146.0" onMouseClicked="#newWordClicked" prefHeight="315.0" prefWidth="305.0" style="-fx-background-color: #005555;" />
-      <TextField fx:id="searchWordTF" layoutX="16.0" layoutY="26.0" prefHeight="27.0" prefWidth="135.0" style="-fx-background-color: #009900;" />
-      <TextArea fx:id="examplesTA" editable="false" layoutX="343.0" layoutY="285.0" prefHeight="117.0" prefWidth="211.0" wrapText="true" />
-      <TextField fx:id="selectedWordTF" layoutX="344.0" layoutY="146.0" />
-      <Label layoutX="343.0" layoutY="261.0" text="Examples" />
-      <TextArea fx:id="moreInfoTA" editable="false" layoutX="343.0" layoutY="448.0" prefHeight="92.0" prefWidth="211.0" wrapText="true" />
-      <Label layoutX="344.0" layoutY="432.0" text="Additional info" />
-      <Button layoutX="186.0" layoutY="26.0" mnemonicParsing="false" onAction="#searchWord" prefHeight="27.0" prefWidth="71.0" text="Search" />
-      <TextField fx:id="pronounciationTF" layoutX="344.0" layoutY="200.0" />
-      <Label layoutX="16.0" layoutY="86.0" prefHeight="27.0" prefWidth="56.0" text="Sort by:">
+      <Button layoutX="16.0" layoutY="527.0" mnemonicParsing="false" onAction="#goToAddNewWordView" prefHeight="51.0" prefWidth="135.0" style="-fx-background-color: #006800;" text="New word" />
+      <Button layoutX="186.0" layoutY="527.0" mnemonicParsing="false" onAction="#goToTestView" prefHeight="51.0" prefWidth="135.0" style="-fx-background-color: #006800;" text="Test yourself" />
+      <ListView fx:id="wordsListView" layoutX="16.0" layoutY="184.0" onMouseClicked="#newWordClicked" prefHeight="315.0" prefWidth="305.0" style="-fx-background-color: #005555;" />
+      <TextField fx:id="searchWordTF" layoutX="16.0" layoutY="97.0" prefHeight="27.0" prefWidth="135.0" style="-fx-background-color: #009900;" />
+      <TextArea fx:id="examplesTA" editable="false" layoutX="343.0" layoutY="323.0" prefHeight="117.0" prefWidth="211.0" wrapText="true" />
+      <TextField fx:id="selectedWordTF" layoutX="344.0" layoutY="184.0" />
+      <Label layoutX="343.0" layoutY="299.0" text="Examples" />
+      <TextArea fx:id="moreInfoTA" editable="false" layoutX="343.0" layoutY="486.0" prefHeight="92.0" prefWidth="211.0" wrapText="true" />
+      <Label layoutX="344.0" layoutY="470.0" text="Additional info" />
+      <Button layoutX="186.0" layoutY="97.0" mnemonicParsing="false" onAction="#searchWord" prefHeight="27.0" prefWidth="71.0" text="Search" />
+      <TextField fx:id="pronounciationTF" layoutX="344.0" layoutY="238.0" />
+      <Label layoutX="16.0" layoutY="124.0" prefHeight="27.0" prefWidth="56.0" text="Sort by:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="16.0" layoutY="120.0" onMouseClicked="#sortBySwedish" prefHeight="17.0" prefWidth="49.0" text="Swedish" />
-      <Label layoutX="84.0" layoutY="120.0" onMouseClicked="#sortByEnglish" prefHeight="17.0" prefWidth="49.0" text="English" />
-      <Label layoutX="343.0" layoutY="177.0" text="Pronounciation" />
+      <Label layoutX="16.0" layoutY="158.0" onMouseClicked="#sortBySwedish" prefHeight="17.0" prefWidth="49.0" text="Swedish" />
+      <Label layoutX="84.0" layoutY="158.0" onMouseClicked="#sortByEnglish" prefHeight="17.0" prefWidth="49.0" text="English" />
+      <Label layoutX="343.0" layoutY="215.0" text="Pronounciation" />
+      <Label layoutX="14.0" layoutY="36.0" text="Search language" />
+      <Label fx:id="searchLangLbl" layoutX="16.0" layoutY="62.0" onMouseClicked="#switchSearchLanguage" prefHeight="17.0" prefWidth="49.0" text="Swedish" />
    </children>
 </Pane>

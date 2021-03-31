@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Language learning app/sample/controllers/MainController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Language learning app/sample/controllers/MainController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Language learning app/sample/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Language learning app/sample/controllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Language learning app/sample/controllers/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Language learning app/sample/controllers/TestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Language learning app/sample/views/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Language learning app/sample/views/mainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/controllers/NewWordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controllers/NewWordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/controllers/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controllers/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/helper_classes/FileReadWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/helper_classes/FileReadWrite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/helper_classes/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/helper_classes/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/views/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/views/mainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/views/testView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/views/testView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/words.txt" beforeDir="false" afterPath="$PROJECT_DIR$/words.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,8 +79,12 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1qAu6delw41SSVcWFofHJjxc5hr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -84,7 +103,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../json/gson-2.2.2.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/word-storing-app-master/word-storing-app-master" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -213,26 +232,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="671" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1616782367281" />
-    <state x="646" y="223" key="FileChooserDialogImpl" timestamp="1616575846136">
+    <state x="646" y="223" key="FileChooserDialogImpl" timestamp="1616924280567">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="646" y="223" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1616575846136" />
-    <state width="1444" height="232" key="GridCell.Tab.0.bottom" timestamp="1616866480215">
+    <state x="646" y="223" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1616924280567" />
+    <state width="1444" height="232" key="GridCell.Tab.0.bottom" timestamp="1617203310466">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1444" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616866480215" />
-    <state width="1444" height="232" key="GridCell.Tab.0.center" timestamp="1616866480215">
+    <state width="1444" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617203310466" />
+    <state width="1444" height="232" key="GridCell.Tab.0.center" timestamp="1617203310465">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1444" height="232" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616866480215" />
-    <state width="1444" height="232" key="GridCell.Tab.0.left" timestamp="1616866480215">
+    <state width="1444" height="232" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617203310465" />
+    <state width="1444" height="232" key="GridCell.Tab.0.left" timestamp="1617203310465">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1444" height="232" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616866480215" />
-    <state width="1444" height="232" key="GridCell.Tab.0.right" timestamp="1616866480215">
+    <state width="1444" height="232" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617203310465" />
+    <state width="1444" height="232" key="GridCell.Tab.0.right" timestamp="1617203310466">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1444" height="232" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616866480215" />
+    <state width="1444" height="232" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617203310466" />
     <state x="346" y="88" key="SettingsEditor" timestamp="1616575850951">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -11,9 +11,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import sample.FileReadWrite;
-import sample.Word;
-import sample.controllers.MainController;
+import sample.helper_classes.FileReadWrite;
+import sample.helper_classes.Word;
 
 import java.io.IOException;
 import java.lang.reflect.Type;

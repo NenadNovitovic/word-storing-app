@@ -8,12 +8,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import sample.FileReadWrite;
-import sample.Word;
+import sample.helper_classes.FileReadWrite;
+import sample.helper_classes.Word;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -27,6 +28,8 @@ public class MainController {
     @FXML private TextArea examplesTA;
     @FXML private TextArea moreInfoTA;
     @FXML private TextField pronounciationTF;
+    @FXML private Label searchLangLbl;
+    private boolean isSwedish;
     Gson gson;
     FileReadWrite readWrite;
     ArrayList<Word> wordList;
@@ -35,6 +38,7 @@ public class MainController {
         gson=new Gson();
         readWrite=new FileReadWrite();
         String wordsString;
+        isSwedish=true;
         try {
             wordsString = readWrite.readFromFile("words.txt");
             Type founderListType = new TypeToken<ArrayList<Word>>(){}.getType();
@@ -43,6 +47,14 @@ public class MainController {
             wordsListView.getItems().addAll(wordList);
         }catch (IOException e){
             System.out.println("IO Exception");
+        }
+    }
+    public void switchSearchLanguage(){
+        isSwedish=!isSwedish;
+        if(isSwedish){
+            searchLangLbl.setText("Swedish");
+        }else{
+            searchLangLbl.setText("English");
         }
     }
     public void newWordClicked(){
@@ -73,12 +85,35 @@ public class MainController {
             e.printStackTrace();
         }
     }
+    public void goToTestView(ActionEvent event){
+        try{
+            FXMLLoader loader=new FXMLLoader();
+            loader.setLocation(getClass().getResource("../views/testView.fxml"));
+            Parent noviRoot = loader.load();
+
+            Scene noviScene = new Scene(noviRoot);
+            TestController controller = loader.getController();
+
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(noviScene);
+            window.show();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
     public void searchWord(){
         String searchString=searchWordTF.getText().toUpperCase();
         ArrayList<Word> newWordList = new ArrayList<>();
-        for(int i=0;i<wordList.size();i++){
-            if(wordList.get(i).getMainLanguage().toUpperCase().contains(searchString))
-                newWordList.add(wordList.get(i));
+        if(isSwedish){
+            for(int i=0;i<wordList.size();i++){
+                if(wordList.get(i).getMainLanguage().toUpperCase().contains(searchString))
+                    newWordList.add(wordList.get(i));
+            }
+        }else{
+            for(int i=0;i<wordList.size();i++){
+                if(wordList.get(i).getTranslatedLanguage().toUpperCase().contains(searchString))
+                    newWordList.add(wordList.get(i));
+            }
         }
         wordsListView.getItems().clear();
         wordsListView.getItems().addAll(newWordList);
