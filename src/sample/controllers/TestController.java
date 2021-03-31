@@ -25,6 +25,7 @@ public class TestController {
     @FXML private TextField answerTF;
     @FXML private Label wordLbl;
     @FXML private Label pointsLbl;
+    @FXML private Label messageLbl;
     Gson gson;
     FileReadWrite readWrite;
     ArrayList<Word> wordList;
@@ -49,8 +50,10 @@ public class TestController {
     public void checkAnswer(){
         if(wordList.get(wordIndex).getTranslatedLanguage().equalsIgnoreCase(answerTF.getText())){
             pointsLbl.setText(++points + "");
+            messageLbl.setText("Correct!");
         }else{
-            System.out.println("Pogresan odgovor: " +wordLbl.getText() + " je " + wordList.get(wordIndex).getTranslatedLanguage() + " a ne "+ (answerTF.getText()));
+            //System.out.println("Pogresan odgovor: " +wordLbl.getText() + " je " + wordList.get(wordIndex).getTranslatedLanguage() + " a ne "+ (answerTF.getText()));
+            messageLbl.setText("Wrong answer. Correct was: " + wordList.get(wordIndex).getTranslatedLanguage());
         }
         wordIndex++;
         if(wordIndex>=wordList.size())
