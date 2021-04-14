@@ -7,7 +7,7 @@
 
 <AnchorPane fx:id="mainPane" prefHeight="423.0" prefWidth="328.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.NewWordController">
    <children>
-      <Button alignment="CENTER" layoutX="29.0" layoutY="386.0" mnemonicParsing="false" onAction="#addWordFunction" prefHeight="17.0" prefWidth="118.0" text="Add word" textAlignment="CENTER" textOverrun="CLIP" />
+      <Button fx:id="addWordBtn" alignment="CENTER" layoutX="29.0" layoutY="386.0" mnemonicParsing="false" onAction="#addWordFunction" prefHeight="17.0" prefWidth="118.0" text="Add word" textAlignment="CENTER" textOverrun="CLIP" />
       <TextField fx:id="mainLanguageTF" layoutX="14.0" layoutY="73.0" onAction="#changeFocus" promptText="Swedish" />
       <TextField fx:id="secondLanguageTF" layoutX="14.0" layoutY="112.0" onAction="#changeFocus" promptText="English" />
       <TextField fx:id="example1TF" layoutX="13.0" layoutY="154.0" onAction="#changeFocus" prefHeight="17.0" prefWidth="299.0" promptText="Example 1" />

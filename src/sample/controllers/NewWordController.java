@@ -24,6 +24,9 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class NewWordController {
+    int wordToEditIndex;
+    boolean editWord;
+    ArrayList<Word> wordList;
     Gson gson;
     FileReadWrite readWrite;
     TextField lastFocus;
@@ -40,8 +43,10 @@ public class NewWordController {
     @FXML Button btn1;
     @FXML Button btn2;
     @FXML Button btn3;
+    @FXML Button addWordBtn;
 
-    public void initialize(){
+    public void initialize() throws IOException {
+        editWord=false;
         gson=new Gson();
         readWrite=new FileReadWrite();
         lastFocus = mainLanguageTF;
@@ -49,6 +54,28 @@ public class NewWordController {
         buttonsArray = new ArrayList<>();
         buttonsArray.add(btn1);buttonsArray.add(btn2);buttonsArray.add(btn3);
         isLowerCase=false;
+        String wordsString = readWrite.readFromFile("words.txt");
+        Type founderListType = new TypeToken<ArrayList<Word>>(){}.getType();
+        wordList = gson.fromJson(wordsString, founderListType);
+        if(wordList==null)
+            wordList = new ArrayList<>();
+    }
+
+    public void setWord(int wordIndex){
+        addWordBtn.setText("Edit word");
+        this.wordToEditIndex=wordIndex;
+        editWord=true;
+        setTextFields();
+    }
+    public void setTextFields(){
+        Word wordToEdit = wordList.get(wordToEditIndex);
+        mainLanguageTF.setText(wordToEdit.getMainLanguage());
+        secondLanguageTF.setText(wordToEdit.getTranslatedLanguage());
+        example1TF.setText(wordToEdit.getWordExamples().get(0));
+        example2TF.setText(wordToEdit.getWordExamples().get(1));
+        example3TF.setText(wordToEdit.getWordExamples().get(2));
+        pronounciationTF.setText(wordToEdit.getPronounciation());
+        moreInfoTA.setText(wordToEdit.getMoreInfo());
     }
 
     public void initTFActions(){
@@ -56,7 +83,7 @@ public class NewWordController {
             if (node instanceof TextField) {
                 ((TextField)node).setOnMousePressed(new EventHandler<MouseEvent>() {
                     public void handle(MouseEvent me) {
-                        lastFocus =(TextField) me.getSource();
+                        lastFocus = (TextField) me.getSource();
                     }
                 });
             }
@@ -67,13 +94,11 @@ public class NewWordController {
             ArrayList<String> exampleStrings = new ArrayList<>();
             fillExampleStrings(exampleStrings);
             Word newWord= new Word(mainLanguageTF.getText(),secondLanguageTF.getText(),pronounciationTF.getText(),exampleStrings, moreInfoTA.getText());
-            String wordsString = readWrite.readFromFile("words.txt");
-            Type founderListType = new TypeToken<ArrayList<Word>>(){}.getType();
-            ArrayList<Word> wordList = gson.fromJson(wordsString, founderListType);
-            if(wordList==null)
-                wordList = new ArrayList<>();
-            System.out.println(wordList);
-            wordList.add(newWord);
+            System.out.println(newWord);
+            if(editWord)
+                wordList.set(wordToEditIndex,newWord);
+            else
+                wordList.add(newWord);
             String gsonString=gson.toJson(wordList);
             readWrite.saveToFile("words.txt",gsonString);
             System.out.println("Word added");

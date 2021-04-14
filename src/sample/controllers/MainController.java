@@ -8,10 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import sample.helper_classes.FileReadWrite;
 import sample.helper_classes.Word;
@@ -29,6 +26,8 @@ public class MainController {
     @FXML private TextArea moreInfoTA;
     @FXML private TextField pronounciationTF;
     @FXML private Label searchLangLbl;
+    @FXML private Button newWordBtn;
+    @FXML private Button editWordBtn;
     private boolean isSwedish;
     Gson gson;
     FileReadWrite readWrite;
@@ -39,6 +38,7 @@ public class MainController {
         readWrite=new FileReadWrite();
         String wordsString;
         isSwedish=true;
+        editWordBtn.setDisable(true);
         try {
             wordsString = readWrite.readFromFile("words.txt");
             Type founderListType = new TypeToken<ArrayList<Word>>(){}.getType();
@@ -71,6 +71,7 @@ public class MainController {
         }
         moreInfoTA.setText(selectedWord.getMoreInfo());
         pronounciationTF.setText(selectedWord.getPronounciation());
+        editWordBtn.setDisable(false);
     }
 
     public void goToAddNewWordView(ActionEvent event){
@@ -81,6 +82,8 @@ public class MainController {
 
             Scene noviScene = new Scene(noviRoot);
             NewWordController controller = loader.getController();
+            if(wordsListView.getSelectionModel().getSelectedItem()!=null && event.getSource()!=newWordBtn)
+                controller.setWord(wordsListView.getSelectionModel().getSelectedIndex());
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             window.setScene(noviScene);
