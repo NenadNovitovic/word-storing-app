@@ -3,13 +3,18 @@ import com.google.gson.Gson;
 
 import com.google.gson.reflect.TypeToken;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import sample.helper_classes.FileReadWrite;
 import sample.helper_classes.Word;
@@ -21,6 +26,8 @@ import java.util.ArrayList;
 public class NewWordController {
     Gson gson;
     FileReadWrite readWrite;
+    TextField lastFocus;
+    ArrayList<Button> buttonsArray;
     @FXML TextField mainLanguageTF;
     @FXML TextField secondLanguageTF;
     @FXML TextField example1TF;
@@ -28,10 +35,32 @@ public class NewWordController {
     @FXML TextField example3TF;
     @FXML TextField pronounciationTF;
     @FXML TextArea moreInfoTA;
+    @FXML AnchorPane mainPane;
+    private boolean isLowerCase;
+    @FXML Button btn1;
+    @FXML Button btn2;
+    @FXML Button btn3;
 
     public void initialize(){
         gson=new Gson();
         readWrite=new FileReadWrite();
+        lastFocus = mainLanguageTF;
+        initTFActions();
+        buttonsArray = new ArrayList<>();
+        buttonsArray.add(btn1);buttonsArray.add(btn2);buttonsArray.add(btn3);
+        isLowerCase=false;
+    }
+
+    public void initTFActions(){
+        for (Node node : mainPane.getChildren()) {
+            if (node instanceof TextField) {
+                ((TextField)node).setOnMousePressed(new EventHandler<MouseEvent>() {
+                    public void handle(MouseEvent me) {
+                        lastFocus =(TextField) me.getSource();
+                    }
+                });
+            }
+        }
     }
     public void addWordFunction(ActionEvent event){
         try{
@@ -77,5 +106,24 @@ public class NewWordController {
         if(counter.length()==0){
             exampleStrings.set(0,"No examples");
         }
+    }
+    public void addLetter(ActionEvent event){
+        Button btn = (Button)event.getSource();
+        lastFocus.setText(lastFocus.getText() + btn.getText());
+    }
+    public void changeFocus(ActionEvent event){
+        lastFocus = (TextField)event.getSource();
+    }
+    public void changeCaps(){
+        if(!isLowerCase){
+            for(int i=0;i<buttonsArray.size();i++){
+                buttonsArray.get(i).setText(buttonsArray.get(i).getText().toLowerCase());
+            }
+        }else{
+            for(int i=0;i<buttonsArray.size();i++){
+                buttonsArray.get(i).setText(buttonsArray.get(i).getText().toUpperCase());
+            }
+        }
+        isLowerCase=!isLowerCase;
     }
 }

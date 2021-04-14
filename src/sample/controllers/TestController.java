@@ -18,6 +18,7 @@ import sample.helper_classes.Word;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class TestController {
@@ -41,13 +42,14 @@ public class TestController {
             wordsString = readWrite.readFromFile("words.txt");
             Type founderListType = new TypeToken<ArrayList<Word>>(){}.getType();
             wordList = gson.fromJson(wordsString, founderListType);
+            Collections.shuffle(wordList);
             wordLbl.setText(wordList.get(wordIndex).getMainLanguage());
         }catch (IOException e){
             System.out.println("IO Exception");
         }
     }
 
-    public void checkAnswer(){
+    public void checkAnswer(ActionEvent event){
         if(wordList.get(wordIndex).getTranslatedLanguage().equalsIgnoreCase(answerTF.getText())){
             pointsLbl.setText(++points + "");
             messageLbl.setText("Correct!");
