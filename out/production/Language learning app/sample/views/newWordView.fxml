@@ -19,5 +19,6 @@
       <Button fx:id="btn2" alignment="CENTER" layoutX="185.0" layoutY="15.0" mnemonicParsing="false" onAction="#addLetter" prefHeight="20.0" prefWidth="30.0" text="Ä" textAlignment="CENTER" />
       <Button fx:id="btn3" alignment="CENTER" layoutX="220.0" layoutY="15.0" mnemonicParsing="false" onAction="#addLetter" prefHeight="20.0" prefWidth="30.0" text="Ö" textAlignment="CENTER" />
       <Button alignment="CENTER" layoutX="54.0" layoutY="15.0" mnemonicParsing="false" onAction="#changeCaps" prefHeight="20.0" text="Change caps" textAlignment="CENTER" />
+      <Button alignment="CENTER" layoutX="225.0" layoutY="386.0" mnemonicParsing="false" onAction="#backToMainView" prefHeight="17.0" prefWidth="62.0" text="Back" />
    </children>
 </AnchorPane>

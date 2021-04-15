@@ -149,4 +149,20 @@ public class NewWordController {
         }
         isLowerCase=!isLowerCase;
     }
+    public void backToMainView(ActionEvent event){
+        try{
+            FXMLLoader loader=new FXMLLoader();
+            loader.setLocation(getClass().getResource("../views/mainView.fxml"));
+            Parent noviRoot = loader.load();
+
+            Scene noviScene = new Scene(noviRoot);
+            MainController controller = loader.getController();
+
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(noviScene);
+            window.show();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 }

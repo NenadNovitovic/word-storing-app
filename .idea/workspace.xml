@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Added shuffle and buttons for swedish characters">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/controllers/NewWordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controllers/NewWordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/views/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/views/mainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/words.txt" beforeDir="false" afterPath="$PROJECT_DIR$/words.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/views/newWordView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/views/newWordView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,22 +235,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="646" y="223" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1617203985355" />
-    <state width="1444" height="232" key="GridCell.Tab.0.bottom" timestamp="1618480296063">
+    <state width="1444" height="232" key="GridCell.Tab.0.bottom" timestamp="1618480612978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1444" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618480296063" />
-    <state width="1444" height="232" key="GridCell.Tab.0.center" timestamp="1618480296063">
+    <state width="1444" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618480612978" />
+    <state width="1444" height="232" key="GridCell.Tab.0.center" timestamp="1618480612978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1444" height="232" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618480296063" />
-    <state width="1444" height="232" key="GridCell.Tab.0.left" timestamp="1618480296063">
+    <state width="1444" height="232" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618480612978" />
+    <state width="1444" height="232" key="GridCell.Tab.0.left" timestamp="1618480612978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1444" height="232" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618480296063" />
-    <state width="1444" height="232" key="GridCell.Tab.0.right" timestamp="1618480296063">
+    <state width="1444" height="232" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618480612978" />
+    <state width="1444" height="232" key="GridCell.Tab.0.right" timestamp="1618480612978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1444" height="232" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618480296063" />
+    <state width="1444" height="232" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618480612978" />
     <state x="346" y="88" key="SettingsEditor" timestamp="1617204201459">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
