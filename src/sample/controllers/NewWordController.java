@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -77,9 +78,9 @@ public class NewWordController {
     public void initTFActions(){
         for (Node node : mainPane.getChildren()) {
             if (node instanceof TextField) {
-                ((TextField)node).setOnMousePressed(new EventHandler<MouseEvent>() {
-                    public void handle(MouseEvent me) {
-                        lastFocus = (TextField) me.getSource();
+                ((TextField)node).focusedProperty().addListener( (obs,oldVal,newVal) ->  {
+                    if(newVal){
+                        lastFocus = (TextField)node;
                     }
                 });
             }
@@ -129,7 +130,9 @@ public class NewWordController {
     }
     public void addLetter(ActionEvent event){
         Button btn = (Button)event.getSource();
-        lastFocus.setText(lastFocus.getText() + btn.getText());
+        lastFocus.appendText(btn.getText());
+        lastFocus.requestFocus();
+        lastFocus.positionCaret(lastFocus.getText().length());
     }
     public void changeFocus(ActionEvent event){
         lastFocus = (TextField)event.getSource();

@@ -22,20 +22,23 @@ public class MainController {
     @FXML private ListView wordsListView;
     @FXML private TextField searchWordTF;
     @FXML private TextField selectedWordTF;
+    @FXML private TextField translatedTF;
     @FXML private TextArea examplesTA;
     @FXML private TextArea moreInfoTA;
     @FXML private TextField pronounciationTF;
     @FXML private Label searchLangLbl;
     @FXML private Button newWordBtn;
     @FXML private Button editWordBtn;
+    @FXML private Button deleteWordBtn;
     private boolean isSwedish;
-    Gson gson;
-    FileReadWrite readWrite;
+    Word selectedWord;
     ArrayList<Word> wordList;
 
     public void initialize(){
+        Word selectedWord;
         isSwedish=true;
         editWordBtn.setDisable(true);
+        deleteWordBtn.setDisable(true);
         try {
             wordList = FileReadWrite.readFromFile("words.txt");
             if(wordList!=null)
@@ -58,8 +61,9 @@ public class MainController {
             System.out.println(index);
             index=0;
         }
-        Word selectedWord = wordList.get(index);
+        selectedWord = wordList.get(index);
         selectedWordTF.setText(selectedWord.getMainLanguage());
+        translatedTF.setText(selectedWord.getTranslatedLanguage());
         examplesTA.clear();
         for(int i=0;i<selectedWord.getWordExamples().size();i++){
             examplesTA.setText(examplesTA.getText()+selectedWord.getWordExamples().get(i)+"\n");
@@ -67,6 +71,25 @@ public class MainController {
         moreInfoTA.setText(selectedWord.getMoreInfo());
         pronounciationTF.setText(selectedWord.getPronounciation());
         editWordBtn.setDisable(false);
+        deleteWordBtn.setDisable(false);
+    }
+    public void deleteWord() throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Delete word '" + selectedWord.getMainLanguage() + "' ?", ButtonType.YES, ButtonType.NO);
+        alert.showAndWait();
+        if (alert.getResult() == ButtonType.YES) {
+            wordList.remove(selectedWord);
+            FileReadWrite.saveToFile("words.txt",wordList);
+            wordsListView.getItems().clear();
+            wordsListView.getItems().addAll(wordList);
+            editWordBtn.setDisable(true);
+            deleteWordBtn.setDisable(true);
+            selectedWordTF.clear();
+            translatedTF.clear();
+            pronounciationTF.clear();
+            examplesTA.clear();
+            moreInfoTA.clear();
+        }
+
     }
 
     public void goToAddNewWordView(ActionEvent event){

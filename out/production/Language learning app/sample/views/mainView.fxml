@@ -10,12 +10,12 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.MainController">
    <children>
-      <Button fx:id="newWordBtn" alignment="CENTER" layoutX="16.0" layoutY="527.0" mnemonicParsing="false" onAction="#goToAddNewWordView" prefHeight="51.0" prefWidth="135.0" style="-fx-background-color: #006800;" text="New word" />
-      <Button alignment="CENTER" layoutX="393.0" layoutY="527.0" mnemonicParsing="false" onAction="#goToTestView" prefHeight="51.0" prefWidth="135.0" style="-fx-background-color: #006800;" text="Test yourself" />
+      <Button fx:id="newWordBtn" alignment="CENTER" layoutX="16.0" layoutY="527.0" mnemonicParsing="false" onAction="#goToAddNewWordView" prefHeight="51.0" prefWidth="135.0" style="-fx-background-color: #006800;" text="New word" textFill="WHITE" />
+      <Button alignment="CENTER" layoutX="412.0" layoutY="527.0" mnemonicParsing="false" onAction="#goToTestView" prefHeight="51.0" prefWidth="135.0" style="-fx-background-color: #006800;" text="Test yourself" textFill="WHITE" />
       <ListView fx:id="wordsListView" layoutX="16.0" layoutY="184.0" onMouseClicked="#newWordClicked" prefHeight="315.0" prefWidth="305.0" style="-fx-background-color: #005555;" />
       <TextField fx:id="searchWordTF" layoutX="16.0" layoutY="97.0" prefHeight="27.0" prefWidth="135.0" style="-fx-background-color: #009900;" />
       <TextArea fx:id="examplesTA" editable="false" layoutX="344.0" layoutY="236.0" prefHeight="117.0" prefWidth="211.0" wrapText="true" />
-      <TextField fx:id="selectedWordTF" layoutX="345.0" layoutY="97.0" />
+      <TextField fx:id="selectedWordTF" layoutX="345.0" layoutY="63.0" />
       <Label layoutX="344.0" layoutY="212.0" text="Examples" />
       <TextArea fx:id="moreInfoTA" editable="false" layoutX="344.0" layoutY="399.0" prefHeight="92.0" prefWidth="211.0" wrapText="true" />
       <Label layoutX="345.0" layoutY="383.0" text="Additional info" />
@@ -31,6 +31,8 @@
       <Label layoutX="344.0" layoutY="128.0" text="Pronounciation" />
       <Label layoutX="14.0" layoutY="36.0" text="Search language" />
       <Label fx:id="searchLangLbl" layoutX="16.0" layoutY="62.0" onMouseClicked="#switchSearchLanguage" prefHeight="17.0" prefWidth="49.0" text="Swedish" />
-      <Button fx:id="editWordBtn" alignment="CENTER" layoutX="200.0" layoutY="527.0" mnemonicParsing="false" onAction="#goToAddNewWordView" prefHeight="51.0" prefWidth="135.0" style="-fx-background-color: #006800;" text="Edit word" />
+      <Button fx:id="editWordBtn" alignment="CENTER" layoutX="169.0" layoutY="527.0" mnemonicParsing="false" onAction="#goToAddNewWordView" prefHeight="51.0" prefWidth="135.0" style="-fx-background-color: #006800;" text="Edit word" textFill="WHITE" />
+      <Button fx:id="deleteWordBtn" alignment="CENTER" layoutX="321.0" layoutY="527.0" mnemonicParsing="false" onAction="#deleteWord" prefHeight="51.0" prefWidth="71.0" style="-fx-background-color: #800000;" text="Delete word" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+      <TextField fx:id="translatedTF" layoutX="345.0" layoutY="89.0" />
    </children>
 </Pane>
