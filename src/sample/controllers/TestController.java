@@ -35,13 +35,8 @@ public class TestController {
    // @FXML private
 
     public void initialize(){
-        gson=new Gson();
-        readWrite=new FileReadWrite();
-        String wordsString;
         try {
-            wordsString = readWrite.readFromFile("words.txt");
-            Type founderListType = new TypeToken<ArrayList<Word>>(){}.getType();
-            wordList = gson.fromJson(wordsString, founderListType);
+            wordList = FileReadWrite.readFromFile("words.txt");
             Collections.shuffle(wordList);
             wordLbl.setText(wordList.get(wordIndex).getMainLanguage());
         }catch (IOException e){

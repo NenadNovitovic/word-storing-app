@@ -34,15 +34,10 @@ public class MainController {
     ArrayList<Word> wordList;
 
     public void initialize(){
-        gson=new Gson();
-        readWrite=new FileReadWrite();
-        String wordsString;
         isSwedish=true;
         editWordBtn.setDisable(true);
         try {
-            wordsString = readWrite.readFromFile("words.txt");
-            Type founderListType = new TypeToken<ArrayList<Word>>(){}.getType();
-            wordList = gson.fromJson(wordsString, founderListType);
+            wordList = FileReadWrite.readFromFile("words.txt");
             if(wordList!=null)
             wordsListView.getItems().addAll(wordList);
         }catch (IOException e){

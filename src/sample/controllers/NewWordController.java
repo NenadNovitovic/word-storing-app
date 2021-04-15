@@ -47,16 +47,12 @@ public class NewWordController {
 
     public void initialize() throws IOException {
         editWord=false;
-        gson=new Gson();
-        readWrite=new FileReadWrite();
         lastFocus = mainLanguageTF;
         initTFActions();
         buttonsArray = new ArrayList<>();
         buttonsArray.add(btn1);buttonsArray.add(btn2);buttonsArray.add(btn3);
         isLowerCase=false;
-        String wordsString = readWrite.readFromFile("words.txt");
-        Type founderListType = new TypeToken<ArrayList<Word>>(){}.getType();
-        wordList = gson.fromJson(wordsString, founderListType);
+        wordList = FileReadWrite.readFromFile("words.txt");
         if(wordList==null)
             wordList = new ArrayList<>();
     }
@@ -99,8 +95,7 @@ public class NewWordController {
                 wordList.set(wordToEditIndex,newWord);
             else
                 wordList.add(newWord);
-            String gsonString=gson.toJson(wordList);
-            readWrite.saveToFile("words.txt",gsonString);
+            FileReadWrite.saveToFile("words.txt",wordList);
             System.out.println("Word added");
             try{
                 FXMLLoader loader=new FXMLLoader();
