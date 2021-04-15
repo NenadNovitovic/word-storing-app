@@ -39,6 +39,7 @@ public class TestController {
             wordList = FileReadWrite.readFromFile("words.txt");
             Collections.shuffle(wordList);
             wordLbl.setText(wordList.get(wordIndex).getMainLanguage());
+
         }catch (IOException e){
             System.out.println("IO Exception");
         }

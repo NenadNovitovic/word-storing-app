@@ -7,7 +7,7 @@
 
 <AnchorPane fx:id="mainPane" prefHeight="423.0" prefWidth="328.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.NewWordController">
    <children>
-      <Button fx:id="addWordBtn" alignment="CENTER" layoutX="29.0" layoutY="386.0" mnemonicParsing="false" onAction="#addWordFunction" prefHeight="17.0" prefWidth="118.0" text="Add word" textAlignment="CENTER" textOverrun="CLIP" />
+      <Button fx:id="addWordBtn" alignment="CENTER" layoutX="13.0" layoutY="386.0" mnemonicParsing="false" onAction="#addWordFunction" prefHeight="17.0" prefWidth="118.0" text="Add word" textAlignment="CENTER" textOverrun="CLIP" />
       <TextField fx:id="mainLanguageTF" layoutX="14.0" layoutY="73.0" onAction="#changeFocus" promptText="Swedish" />
       <TextField fx:id="secondLanguageTF" layoutX="14.0" layoutY="112.0" onAction="#changeFocus" promptText="English" />
       <TextField fx:id="example1TF" layoutX="13.0" layoutY="154.0" onAction="#changeFocus" prefHeight="17.0" prefWidth="299.0" promptText="Example 1" />
@@ -19,6 +19,6 @@
       <Button fx:id="btn2" alignment="CENTER" layoutX="185.0" layoutY="15.0" mnemonicParsing="false" onAction="#addLetter" prefHeight="20.0" prefWidth="30.0" text="Ä" textAlignment="CENTER" />
       <Button fx:id="btn3" alignment="CENTER" layoutX="220.0" layoutY="15.0" mnemonicParsing="false" onAction="#addLetter" prefHeight="20.0" prefWidth="30.0" text="Ö" textAlignment="CENTER" />
       <Button alignment="CENTER" layoutX="54.0" layoutY="15.0" mnemonicParsing="false" onAction="#changeCaps" prefHeight="20.0" text="Change caps" textAlignment="CENTER" />
-      <Button alignment="CENTER" layoutX="225.0" layoutY="386.0" mnemonicParsing="false" onAction="#backToMainView" prefHeight="17.0" prefWidth="62.0" text="Back" />
+      <Button alignment="CENTER" layoutX="250.0" layoutY="386.0" mnemonicParsing="false" onAction="#backToMainView" prefHeight="17.0" prefWidth="62.0" text="Back" />
    </children>
 </AnchorPane>

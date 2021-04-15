@@ -43,6 +43,7 @@ public class MainController {
             wordList = FileReadWrite.readFromFile("words.txt");
             if(wordList!=null)
             wordsListView.getItems().addAll(wordList);
+            
         }catch (IOException e){
             System.out.println("IO Exception");
         }
