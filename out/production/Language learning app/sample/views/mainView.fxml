@@ -12,7 +12,7 @@
    <children>
       <Button fx:id="newWordBtn" alignment="CENTER" layoutX="16.0" layoutY="527.0" mnemonicParsing="false" onAction="#goToAddNewWordView" prefHeight="51.0" prefWidth="135.0" style="-fx-background-color: #006800;" text="New word" textFill="WHITE" />
       <Button alignment="CENTER" layoutX="412.0" layoutY="527.0" mnemonicParsing="false" onAction="#goToTestView" prefHeight="51.0" prefWidth="135.0" style="-fx-background-color: #006800;" text="Test yourself" textFill="WHITE" />
-      <ListView fx:id="wordsListView" layoutX="16.0" layoutY="184.0" onMouseClicked="#newWordClicked" prefHeight="315.0" prefWidth="305.0" style="-fx-background-color: #005555;" />
+      <ListView fx:id="wordsListView" layoutX="16.0" layoutY="184.0"  prefHeight="315.0" prefWidth="305.0" style="-fx-background-color: #005555;" />
       <TextField fx:id="searchWordTF" layoutX="16.0" layoutY="97.0" prefHeight="27.0" prefWidth="135.0" style="-fx-background-color: #009900;" />
       <TextArea fx:id="examplesTA" editable="false" layoutX="344.0" layoutY="236.0" prefHeight="117.0" prefWidth="211.0" wrapText="true" />
       <TextField fx:id="selectedWordTF" layoutX="345.0" layoutY="63.0" />

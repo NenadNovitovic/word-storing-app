@@ -2,6 +2,8 @@ package sample.controllers;
 import com.google.gson.Gson;
 
 import com.google.gson.reflect.TypeToken;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -43,10 +45,16 @@ public class MainController {
             wordList = FileReadWrite.readFromFile("words.txt");
             if(wordList!=null)
             wordsListView.getItems().addAll(wordList);
-            
         }catch (IOException e){
             System.out.println("IO Exception");
         }
+       wordsListView.getSelectionModel().selectedItemProperty().addListener(
+                new ChangeListener<Word>() {
+                    public void changed(ObservableValue<? extends Word> ov, Word old_val, Word new_val) {
+                        if(new_val!=null)
+                            newWordFocused();
+                    }
+                });
     }
     public void switchSearchLanguage(){
         isSwedish=!isSwedish;
@@ -56,13 +64,8 @@ public class MainController {
             searchLangLbl.setText("English");
         }
     }
-    public void newWordClicked(){
-        int index = wordsListView.getSelectionModel().getSelectedIndex();
-        if(index<0){
-            System.out.println(index);
-            index=0;
-        }
-        selectedWord = wordList.get(index);
+    public void newWordFocused(){
+        selectedWord = (Word)wordsListView.getSelectionModel().getSelectedItem();
         selectedWordTF.setText(selectedWord.getMainLanguage());
         translatedTF.setText(selectedWord.getTranslatedLanguage());
         examplesTA.clear();
@@ -101,8 +104,9 @@ public class MainController {
 
             Scene noviScene = new Scene(noviRoot);
             NewWordController controller = loader.getController();
+            System.out.println(wordList.indexOf(selectedWord));
             if(wordsListView.getSelectionModel().getSelectedItem()!=null && event.getSource()!=newWordBtn)
-                controller.setWord(wordsListView.getSelectionModel().getSelectedIndex());
+                controller.setWord(wordList.indexOf(selectedWord));
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             window.setScene(noviScene);
