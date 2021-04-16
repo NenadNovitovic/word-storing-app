@@ -1,7 +1,6 @@
 package sample.controllers;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +15,6 @@ import sample.helper_classes.Word;
 
 
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -27,12 +25,11 @@ public class TestController {
     @FXML private Label wordLbl;
     @FXML private Label pointsLbl;
     @FXML private Label messageLbl;
-    Gson gson;
-    FileReadWrite readWrite;
+    @FXML private Label wrongAnswersLbl;
     ArrayList<Word> wordList;
     int wordIndex = 0;
     int points=0;
-   // @FXML private
+    int wrongPoints=0;
 
     public void initialize(){
         try {
@@ -50,8 +47,8 @@ public class TestController {
             pointsLbl.setText(++points + "");
             messageLbl.setText("Correct!");
         }else{
-            //System.out.println("Pogresan odgovor: " +wordLbl.getText() + " je " + wordList.get(wordIndex).getTranslatedLanguage() + " a ne "+ (answerTF.getText()));
             messageLbl.setText("Wrong answer. Correct was: " + wordList.get(wordIndex).getTranslatedLanguage());
+            wrongAnswersLbl.setText(++wrongPoints + "");
         }
         wordIndex++;
         if(wordIndex>=wordList.size())

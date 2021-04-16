@@ -1,7 +1,5 @@
 package sample.controllers;
-import com.google.gson.Gson;
 
-import com.google.gson.reflect.TypeToken;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -16,7 +14,6 @@ import sample.helper_classes.FileReadWrite;
 import sample.helper_classes.Word;
 
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class MainController {
@@ -37,7 +34,6 @@ public class MainController {
     ArrayList<Word> wordList;
 
     public void initialize(){
-        Word selectedWord;
         isSwedish=true;
         editWordBtn.setDisable(true);
         deleteWordBtn.setDisable(true);
@@ -104,7 +100,6 @@ public class MainController {
 
             Scene noviScene = new Scene(noviRoot);
             NewWordController controller = loader.getController();
-            System.out.println(wordList.indexOf(selectedWord));
             if(wordsListView.getSelectionModel().getSelectedItem()!=null && event.getSource()!=newWordBtn)
                 controller.setWord(wordList.indexOf(selectedWord));
 
@@ -147,6 +142,8 @@ public class MainController {
         }
         wordsListView.getItems().clear();
         wordsListView.getItems().addAll(newWordList);
+        editWordBtn.setDisable(true);
+        deleteWordBtn.setDisable(true);
     }
     public void sortByEnglish(){
         for(int i=0;i<wordList.size()-1;i++){

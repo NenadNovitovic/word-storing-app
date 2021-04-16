@@ -1,35 +1,26 @@
 package sample.controllers;
-import com.google.gson.Gson;
 
-import com.google.gson.reflect.TypeToken;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import sample.helper_classes.FileReadWrite;
 import sample.helper_classes.Word;
 
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class NewWordController {
     int wordToEditIndex;
     boolean editWord;
     ArrayList<Word> wordList;
-    Gson gson;
-    FileReadWrite readWrite;
     TextField lastFocus;
     ArrayList<Button> buttonsArray;
     @FXML TextField mainLanguageTF;
@@ -91,7 +82,6 @@ public class NewWordController {
             ArrayList<String> exampleStrings = new ArrayList<>();
             fillExampleStrings(exampleStrings);
             Word newWord= new Word(mainLanguageTF.getText(),secondLanguageTF.getText(),pronounciationTF.getText(),exampleStrings, moreInfoTA.getText());
-            System.out.println(newWord);
             if(editWord)
                 wordList.set(wordToEditIndex,newWord);
             else
